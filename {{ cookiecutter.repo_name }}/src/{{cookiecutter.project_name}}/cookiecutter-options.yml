@@ -1,0 +1,9 @@
+default_context:
+    project_name: "{{ cookiecutter.project_name }}"
+    repo_name: "{{ cookiecutter.repo_name }}"
+    app_name: "{{ cookiecutter.app_name }}"
+    author_name: "{{ cookiecutter.author_name }}"
+    description: "{{ cookiecutter.description }}"
+    python_version: "{{ cookiecutter.python_version }}"
+    tox_python_env: "{{ cookiecutter.tox_python_env }}"
+    wsgi_server: "{{ cookiecutter.wsgi_server }}"
