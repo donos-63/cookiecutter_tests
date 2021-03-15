@@ -73,8 +73,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
-doc/_build/
+_docs/_build/
+_doc/_build/
 
 # PyBuilder
 target/
@@ -159,7 +159,7 @@ Thumbs.db #thumbnail cache on Windows
 
 # End of https://www.toptal.com/developers/gitignore/api/python,vscode
 
-docs/site/
+_docs/site/
 !*.gitkeep
 
 # OSX Junk
