@@ -7,3 +7,6 @@ default_context:
     python_version: "{{ cookiecutter.python_version }}"
     tox_python_env: "{{ cookiecutter.tox_python_env }}"
     wsgi_server: "{{ cookiecutter.wsgi_server }}"
+    python_interpreter: "{{ cookiecutter.python_interpreter }}"
+
+
