@@ -7,7 +7,7 @@ import shutil
 #we don't use celery. keep as an example
 
 """ 
-use_celery = '{{cookiecutter.use_celery}}'
+use_celery = '--cookiecutter.use_celery--'
 
 
 if use_celery == "no":
