@@ -1,5 +1,5 @@
 # app packages
--r ./src/{{cookiecutter.project_name}}/requirements.txt
+-r src/application/requirements.txt
 
 # external requirements
 click

@@ -1,4 +1,4 @@
-from flask import request, jsonify, Blueprint, current_app as app
+from flask import request, jsonify, Blueprint, current_app
 from flask_jwt_extended import (
     create_access_token,
     create_refresh_token,
@@ -68,8 +68,8 @@ def login():
 
     access_token = create_access_token(identity=user.id)
     refresh_token = create_refresh_token(identity=user.id)
-    add_token_to_database(access_token, app.config["JWT_IDENTITY_CLAIM"])
-    add_token_to_database(refresh_token, app.config["JWT_IDENTITY_CLAIM"])
+    add_token_to_database(access_token, current_app.config["JWT_IDENTITY_CLAIM"])
+    add_token_to_database(refresh_token, current_app.config["JWT_IDENTITY_CLAIM"])
 
     ret = {"access_token": access_token, "refresh_token": refresh_token}
     return jsonify(ret), 200
@@ -107,7 +107,7 @@ def refresh():
     current_user = get_jwt_identity()
     access_token = create_access_token(identity=current_user)
     ret = {"access_token": access_token}
-    add_token_to_database(access_token, app.config["JWT_IDENTITY_CLAIM"])
+    add_token_to_database(access_token, current_app.config["JWT_IDENTITY_CLAIM"])
     return jsonify(ret), 200
 
 
@@ -184,7 +184,7 @@ def check_if_token_revoked(jwt_headers, jwt_payload):
 
 @blueprint.before_app_first_request
 def register_views():
-    apispec.spec.path(view=login, app=app)
-    apispec.spec.path(view=refresh, app=app)
-    apispec.spec.path(view=revoke_access_token, app=app)
-    apispec.spec.path(view=revoke_refresh_token, app=app)
+    apispec.spec.path(view=login, app=current_app)
+    apispec.spec.path(view=refresh, app=current_app)
+    apispec.spec.path(view=revoke_access_token, app=current_app)
+    apispec.spec.path(view=revoke_refresh_token, app=current_app)

@@ -1,10 +1,10 @@
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
-from {{cookiecutter.app_name}}.api.schemas import UserSchema
-from {{cookiecutter.app_name}}.models import User
-from {{cookiecutter.app_name}}.extensions import db
-from {{cookiecutter.app_name}}.commons.pagination import paginate
+from myapi.users.schemas import UserSchema
+from myapi.models import User
+from myapi.extensions import db
+from myapi.commons.pagination import paginate
 
 
 class UserResource(Resource):
@@ -13,7 +13,7 @@ class UserResource(Resource):
     ---
     get:
       tags:
-        - api
+        - usrs
       parameters:
         - in: path
           name: user_id
@@ -31,7 +31,7 @@ class UserResource(Resource):
           description: user does not exists
     put:
       tags:
-        - api
+        - usrs
       parameters:
         - in: path
           name: user_id
@@ -57,7 +57,7 @@ class UserResource(Resource):
           description: user does not exists
     delete:
       tags:
-        - api
+        - usrs
       parameters:
         - in: path
           name: user_id
@@ -107,7 +107,7 @@ class UserList(Resource):
     ---
     get:
       tags:
-        - api
+        - usrs
       responses:
         200:
           content:
@@ -123,7 +123,7 @@ class UserList(Resource):
                           $ref: '#/components/schemas/UserSchema'
     post:
       tags:
-        - api
+        - usrs
       requestBody:
         content:
           application/json:

@@ -1,17 +1,17 @@
 from flask import Blueprint, current_app, jsonify
 from flask_restful import Api
 from marshmallow import ValidationError
-from {{cookiecutter.app_name}}.extensions import apispec
-from {{cookiecutter.app_name}}.api.resources import UserResource, UserList
-from {{cookiecutter.app_name}}.api.schemas import UserSchema
+from myapi.extensions import apispec
+from myapi.users.resources import UserResource, UserList
+from myapi.users.schemas import UserSchema
 
 
-blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
-api = Api(blueprint)
+blueprint = Blueprint("users", __name__, url_prefix="/usr/v1")
+users = Api(blueprint)
 
 
-api.add_resource(UserResource, "/users/<int:user_id>", endpoint="user_by_id")
-api.add_resource(UserList, "/users", endpoint="users")
+users.add_resource(UserResource, "/users/<int:user_id>", endpoint="user_by_id")
+users.add_resource(UserList, "/users", endpoint="users")
 
 
 @blueprint.before_app_first_request
