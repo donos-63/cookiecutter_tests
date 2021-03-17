@@ -1,10 +1,10 @@
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
-from myapi.users.schemas import UserSchema
-from myapi.models import User
-from myapi.extensions import db
-from myapi.commons.pagination import paginate
+from {{cookiecutter.app_name}}.users.schemas import UserSchema
+from {{cookiecutter.app_name}}.models import User
+from {{cookiecutter.app_name}}.extensions import db
+from {{cookiecutter.app_name}}.commons.pagination import paginate
 
 
 class UserResource(Resource):

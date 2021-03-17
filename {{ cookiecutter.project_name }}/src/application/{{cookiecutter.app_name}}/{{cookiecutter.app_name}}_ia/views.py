@@ -1,6 +1,6 @@
 from flask import Blueprint, current_app, jsonify
 from flask_restful import Api
-from myapi.extensions import apispec
+from {{cookiecutter.app_name}}.extensions import apispec
 from flask_jwt_extended import jwt_required
 
 
