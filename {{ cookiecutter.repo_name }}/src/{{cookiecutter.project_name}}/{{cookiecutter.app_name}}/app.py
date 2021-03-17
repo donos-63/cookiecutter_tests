@@ -5,6 +5,7 @@ from {{cookiecutter.app_name}}.extensions import apispec
 from {{cookiecutter.app_name}}.extensions import db
 from {{cookiecutter.app_name}}.extensions import jwt
 from {{cookiecutter.app_name}}.extensions import migrate
+from logging import basicConfig, DEBUG, getLogger, StreamHandler
 
 def create_app(testing=False):
     """Application factory, used to create application"""
@@ -17,6 +18,7 @@ def create_app(testing=False):
     configure_extensions(app)
     configure_apispec(app)
     register_blueprints(app)
+    configure_logs(app)
 
     return app
 
@@ -51,3 +53,12 @@ def register_blueprints(app):
     """register all blueprints for application"""
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(api.views.blueprint)
+
+def configure_logs(app):
+    # soft logging
+    try:
+        basicConfig(filename='error.log', level=DEBUG)
+        logger = getLogger()
+        logger.addHandler(StreamHandler())
+    except:
+        pass

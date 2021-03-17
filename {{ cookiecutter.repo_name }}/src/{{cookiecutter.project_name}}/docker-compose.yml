@@ -2,6 +2,8 @@
 {% set web_command = "uwsgi --http 0.0.0.0:5000 --module " + cookiecutter.app_name + ".wsgi:app" %}
 {%- elif cookiecutter.wsgi_server == "gunicorn" -%}
 {% set web_command = "gunicorn -b 0.0.0.0:5000 " + cookiecutter.app_name + ".wsgi:app" %}
+{%- elif cookiecutter.wsgi_server == "uvicorn" -%}
+{% set web_command = "uvicorn -b 0.0.0.0:5000 " + cookiecutter.app_name + ".wsgi:app" %}
 {%- else -%}
 {% set web_command = "flask run -h 0.0.0.0" %}
 {%- endif -%}
