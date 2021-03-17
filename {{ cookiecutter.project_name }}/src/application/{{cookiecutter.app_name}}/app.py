@@ -1,7 +1,7 @@
 from flask import Flask
 from {{cookiecutter.app_name}} import users
 from {{cookiecutter.app_name}} import auth
-from {{cookiecutter.app_name}} import {{cookiecutter.app_name}}_ia
+from {{cookiecutter.app_name}} import example
 
 from {{cookiecutter.app_name}}.extensions import apispec
 from {{cookiecutter.app_name}}.extensions import db
@@ -55,7 +55,7 @@ def register_blueprints(app):
     """register all blueprints for application"""
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(users.views.blueprint)
-    app.register_blueprint({{cookiecutter.app_name}}_ia.views.blueprint)
+    app.register_blueprint(example.views.blueprint)
 
 def configure_logs(app):
     # soft logging

@@ -5,8 +5,8 @@ from flask_jwt_extended import jwt_required
 
 
 
-blueprint = Blueprint("ia", __name__, url_prefix="/ia")
-ia = Api(blueprint)
+blueprint = Blueprint("example", __name__, url_prefix="/example")
+example = Api(blueprint)
 
 
 @blueprint.route("/hello_world", methods=["POST"])
@@ -16,7 +16,7 @@ def hello_world():
     ---
     post:
       tags:
-        - ia
+        - example
       responses:
         200:
           content:

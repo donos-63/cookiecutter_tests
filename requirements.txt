@@ -1,5 +1,3 @@
--r {{ cookiecutter.project_name }}/requirements.txt
-
 mkdocs
 mkdocs-cinder
 cookiecutter
