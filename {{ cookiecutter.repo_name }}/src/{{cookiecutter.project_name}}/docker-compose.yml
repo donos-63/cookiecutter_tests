@@ -16,7 +16,7 @@ services:
     env_file:
       - ./.flaskenv
     environment:
-      - DATABASE_URI=sqlite:////db/{{cookiecutter.app_name}}.db
+      - DATABASE_URI=sqlite:////db_private/{{cookiecutter.app_name}}.db
     volumes:
       - ./{{cookiecutter.app_name}}:/code/{{cookiecutter.app_name}}
       - ./db/:/db/
