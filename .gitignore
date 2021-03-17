@@ -161,6 +161,7 @@ Thumbs.db #thumbnail cache on Windows
 
 _docs/site/
 !*.gitkeep
+!db_private/*.db
 
 # OSX Junk
 .DS_Store
