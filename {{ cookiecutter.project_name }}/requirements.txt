@@ -1,6 +1,3 @@
-# app packages
--r src/application/requirements.txt
-
 # external requirements
 click
 Sphinx
