@@ -5,6 +5,7 @@ import shutil
 
 
 #we don't use celery. keep as an example
+print("coucou")
 
 """ 
 use_celery = '--cookiecutter.use_celery--'
