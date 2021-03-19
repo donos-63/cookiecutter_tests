@@ -1,11 +1,27 @@
 import os
 import sys
 import shutil
-
+import subprocess
 
 
 #we don't use celery. keep as an example
-print("coucou")
+print("post installation processing")
+local_path = os.getcwd()
+print(local_path)
+
+print("install requirements")
+subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, {{ cookiecutter.project_name }}, 'requirements.txt')])
+subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, {{ cookiecutter.project_name }}, 'src', 'application', 'requirements.txt')])
+""" 
+print("initialize db")
+subprocess.check_call([sys.executable, "-m", "flask", "db upgrade", cwd=os.path.join(local_path, {{ cookiecutter.project_name }}, 'src', 'application', 'requirements.txt')])
+
+print("initialize application")
+subprocess.check_call([sys.executable, "-m", "flask", "init {{cookiecutter.app_name}}", os.path.join(local_path, {{ cookiecutter.project_name }}, 'src', 'application', 'requirements.txt')])
+ """
+
+
+print("post installation end")
 
 """ 
 use_celery = '--cookiecutter.use_celery--'
