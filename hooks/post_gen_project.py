@@ -14,13 +14,13 @@ subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", os.path.joi
 subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", 'requirements.txt'], cwd=os.path.join(local_path, 'src', 'application'))
 
 print(">>>  Setup db")
-subprocess.check_call([sys.executable, "-m", "flask","db upgrade"], cwd=os.path.join(local_path, 'src', 'application'))
+subprocess.run([sys.executable, "-m", "flask","db upgrade"], cwd=os.path.join(local_path, 'src', 'application'))
 
 print(">>>  setup application")
-subprocess.check_call([sys.executable, "-m", "flask","myapi init"], cwd=os.path.join(local_path, 'src', 'application'))
+subprocess.run([sys.executable, "-m", "flask","myapi init"], cwd=os.path.join(local_path, 'src', 'application'))
 
 print(">>>  test installation")
-subprocess.check_call([sys.executable, "-m", "tox","-e", "test"], cwd=os.path.join(local_path, 'src', 'application'))
+subprocess.run([sys.executable, "-m", "tox","-e", "test"], cwd=os.path.join(local_path, 'src', 'application'))
 
 
 print(">>>>>>  post installation end  <<<<<<")
