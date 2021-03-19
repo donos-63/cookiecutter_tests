@@ -10,8 +10,8 @@ local_path = os.getcwd()
 print(local_path)
 
 print("install requirements")
-subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, "{{ cookiecutter.project_name }}", 'requirements.txt')])
-subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, "{{ cookiecutter.project_name }}", 'src', 'application', 'requirements.txt')])
+subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, 'requirements.txt')])
+subprocess.check_call([sys.executable, "-m", "pip", "install", os.path.join(local_path, 'src', 'application', 'requirements.txt')])
 """ 
 print("initialize db")
 subprocess.check_call([sys.executable, "-m", "flask", "db upgrade", cwd=os.path.join(local_path, {{ cookiecutter.project_name }}, 'src', 'application', 'requirements.txt')])
