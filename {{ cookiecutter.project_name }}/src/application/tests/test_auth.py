@@ -2,7 +2,7 @@ def test_revoke_access_token(client, admin_headers):
     resp = client.delete("/auth/revoke_access", headers=admin_headers)
     assert resp.status_code == 200
 
-    resp = client.get("/api/users", headers=admin_headers)
+    resp = client.get("/usr/users", headers=admin_headers)
     assert resp.status_code == 401
 
 
