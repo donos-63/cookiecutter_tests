@@ -45,7 +45,6 @@ def admin_user(db):
 
     return user
 
-
 @pytest.fixture
 def admin_headers(admin_user, client):
     data = {

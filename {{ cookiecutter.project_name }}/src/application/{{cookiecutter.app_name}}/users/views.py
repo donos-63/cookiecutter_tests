@@ -6,7 +6,7 @@ from {{cookiecutter.app_name}}.users.resources import UserResource, UserList
 from {{cookiecutter.app_name}}.users.schemas import UserSchema
 
 
-blueprint = Blueprint("users", __name__, url_prefix="/usr/v1")
+blueprint = Blueprint("users", __name__, url_prefix="/usr")
 users = Api(blueprint)
 
 
