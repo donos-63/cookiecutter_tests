@@ -25,6 +25,7 @@ subprocess.run(
 )
 
 print(">>>  test template generation")
+print(os.getcwd())
 subprocess.run([sys.executable, "-m", "py.test", "tests"])
 
 print(">>>  Setup db")
