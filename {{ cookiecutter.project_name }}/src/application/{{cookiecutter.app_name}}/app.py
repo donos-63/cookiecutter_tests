@@ -9,6 +9,7 @@ from {{cookiecutter.app_name}}.extensions import jwt
 from {{cookiecutter.app_name}}.extensions import migrate
 import logging
 
+
 def create_app(testing=False):
     """Application factory, used to create application"""
     app = Flask("{{cookiecutter.app_name}}")
@@ -56,6 +57,7 @@ def register_blueprints(app):
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(users.views.blueprint)
     app.register_blueprint(example.views.blueprint)
+
 
 def configure_logs(app):
     # soft logging

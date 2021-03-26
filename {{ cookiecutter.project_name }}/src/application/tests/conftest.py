@@ -72,4 +72,3 @@ def admin_refresh_headers(admin_user, client):
         "content-type": "application/json",
         "authorization": "Bearer %s" % tokens["refresh_token"],
     }
-    
