@@ -41,7 +41,6 @@ The directory structure of your new project looks like this:
 ├── LICENSE
 ├── Makefile           <- Makefile with commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
-├── _docs               <- A default Sphinx project; see sphinx-doc.org for details
 ├── data
 │   ├── external       <- Data from third party sources.
 │   ├── interim        <- Intermediate data that has been transformed.
@@ -78,10 +77,10 @@ The directory structure of your new project looks like this:
 │   │   ├── predict_model.py
 │   │   └── train_model.py
 │   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
-│
-└── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+│   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
+│   │   └── visualize.py
+│   │
+│   └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```
 
 ## Contributing
