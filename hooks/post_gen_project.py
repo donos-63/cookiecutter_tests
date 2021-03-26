@@ -24,10 +24,6 @@ subprocess.run(
     cwd=os.path.join(local_path, "src", "application"),
 )
 
-print(">>>  test template generation")
-print(os.getcwd())
-subprocess.run([sys.executable, "-m", "py.test", "tests"])
-
 print(">>>  Setup db")
 subprocess.run(
     [sys.executable, "-m", "flask", "db", "upgrade"],
