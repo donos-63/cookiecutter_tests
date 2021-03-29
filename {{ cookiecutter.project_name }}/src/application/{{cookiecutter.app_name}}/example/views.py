@@ -38,4 +38,3 @@ def hello_world():
 @blueprint.before_app_first_request
 def register_views():
     apispec.spec.path(view=hello_world, app=current_app)
-
