@@ -52,7 +52,6 @@ def admin_headers(admin_user, client):
     )
 
     tokens = json.loads(rep.get_data(as_text=True))
-    
     return {
         "content-type": "application/json",
         "authorization": "Bearer %s" % tokens["access_token"],
@@ -69,7 +68,6 @@ def admin_refresh_headers(admin_user, client):
     )
 
     tokens = json.loads(rep.get_data(as_text=True))
-    
     return {
         "content-type": "application/json",
         "authorization": "Bearer %s" % tokens["refresh_token"],
