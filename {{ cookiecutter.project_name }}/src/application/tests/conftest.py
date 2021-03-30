@@ -9,9 +9,6 @@ from pytest_factoryboy import register
 from tests.factories import UserFactory
 
 
-register(UserFactory)
-
-
 @pytest.fixture(scope="session")
 def app():
     load_dotenv(".testenv")
@@ -72,3 +69,6 @@ def admin_refresh_headers(admin_user, client):
         "content-type": "application/json",
         "authorization": "Bearer %s" % tokens["refresh_token"],
     }
+
+#register user factory
+register(UserFactory)

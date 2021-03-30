@@ -10,9 +10,9 @@ from flask_jwt_extended import (
 from {{cookiecutter.app_name}}.models import User
 from {{cookiecutter.app_name}}.extensions import pwd_context, jwt, apispec
 from {{cookiecutter.app_name}}.auth.helpers import (
-    revoke_token, 
-    is_token_revoked, 
-    add_token_to_database
+    revoke_token,
+    is_token_revoked,
+    add_token_to_database,
 )
 
 
