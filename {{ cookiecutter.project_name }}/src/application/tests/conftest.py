@@ -5,8 +5,13 @@ from dotenv import load_dotenv
 from {{cookiecutter.app_name}}.models import User
 from {{cookiecutter.app_name}}.app import create_app
 from {{cookiecutter.app_name}}.extensions import db as _db
-from pytest_factoryboy import register
 from tests.factories import UserFactory
+from pytest_factoryboy import register
+
+
+register(UserFactory)
+
+register(UserFactory)
 
 
 @pytest.fixture(scope="session")
@@ -69,6 +74,3 @@ def admin_refresh_headers(admin_user, client):
         "content-type": "application/json",
         "authorization": "Bearer %s" % tokens["refresh_token"],
     }
-
-#register user factory
-register(UserFactory)
